@@ -1,0 +1,116 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #020d1d;
+    color: #E8F1FF;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.cabecalho {
+    width: 100%;
+    height: 80px;
+   background: linear-gradient(
+        90deg,
+        #07152F,
+        #0b0b31
+    );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+
+}
+
+.logo h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    color: #F1F3F8;
+    letter-spacing: 2px;
+}
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icone-moeda {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.usuario span {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: #F1F3F8;
+}
+.inicio {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 70px;
+}
+
+
+.inicio h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 40px;
+    color: #F1F3F8;
+    margin-bottom: 20px;
+}
+
+
+.opcoes {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 70px;
+    width: 100%;
+}
+
+.card-velha{
+    width: 275px;
+    height: 280px;
+    background-color: #131d62;
+    border: 4px solid #6947D8;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+.card-forca{
+    width: 275px;
+    height: 280px;
+    background-color: #013b3c;
+    border: 4px solid #00d8c4;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+.card-memoria{
+    width: 275px;
+    height: 280px;
+    background-color: #131d62;
+    border: 4px solid #6947D8;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
