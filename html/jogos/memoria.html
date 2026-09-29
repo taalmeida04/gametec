@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jogo da Memória</title>
+
+    <link rel="stylesheet" href="../../css/jogos/memoria.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <div class="logo">
+
+            <h1>GameTec</h1>
+
+        </div>
+
+        <div class="usuario">
+
+            <img src="/assets/img/moeda.png" alt="Moedas" class="icone-moeda">
+
+            <span>01802</span>
+
+        </div>
+
+    </header>
+
+
+    <main class="memoria">
+        <a href="./jogos.html" class="voltar">← Voltar</a>
+        <h1>Jogo da Memória</h1>
+
+        <p>Encontre os pares!</p>
+
+        <section class="cartas">
+
+            <div class="carta" onclick="virar(this)">
+                <div class="frente">⭐</div>
+            </div>
+
+            <div class="carta" onclick="virar(this)">
+                <div class="frente">⭐</div>
+            </div>
+
+            <div class="carta" onclick="virar(this)">
+                <div class="frente">🎮</div>
+            </div>
+
+            <div class="carta" onclick="virar(this)">
+                <div class="frente">🎮</div>
+            </div>
+
+            <div class="carta" onclick="virar(this)">
+                <div class="frente">👾</div>
+            </div>
+
+            <div class="carta" onclick="virar(this)">
+                <div class="frente">👾</div>
+            </div>
+
+            <div class="carta" onclick="virar(this)">
+                <div class="frente">🚀</div>
+            </div>
+
+            <div class="carta" onclick="virar(this)">
+                <div class="frente">🚀</div>
+            </div>
+
+            <div class="carta" onclick="virar(this)">
+                <div class="frente">🎯</div>
+            </div>
+
+            <div class="carta" onclick="virar(this)">
+                <div class="frente">🎯</div>
+            </div>
+
+            <div class="carta" onclick="virar(this)">
+                <div class="frente">🏆</div>
+            </div>
+
+            <div class="carta" onclick="virar(this)">
+                <div class="frente">🏆</div>
+            </div>
+
+        </section>
+
+
+        <div class="informacoes">
+
+            <div>
+                <h3>PONTUAÇÃO</h3>
+                <span id="pontuacao">0</span>
+            </div>
+
+            <div>
+                <h3>TEMPO</h3>
+                <span id="tempo">00:00</span>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="../../Js/memoria.js"></script>
+
+</body>
+
+</html>
