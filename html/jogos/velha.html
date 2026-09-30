@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jogo da Velha</title>
+
+    <link rel="stylesheet" href="../../css/jogos/velha.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <div class="logo">
+            <h1>GameTec</h1>
+        </div>
+
+        <div class="usuario">
+
+            <img src="/assets/img/moeda.png"
+                 alt="Moedas"
+                 class="icone-moeda">
+
+            <span>01802</span>
+
+        </div>
+
+    </header>
+
+
+    <main class="inicio">
+
+        <a href="./jogos.html" class="voltar">← Voltar</a>
+
+
+        <div id="escolha">
+
+            <h1>Jogo da Velha</h1>
+
+            <p>Escolha como você vai jogar</p>
+
+
+            <section class="opcoes">
+
+
+                <div class="card-maquina">
+
+                    <img src="../../assets/img/maquina.png"
+                         alt="Máquina"
+                         class="icone-maquina">
+
+                    <h3>CONTRA A<br>MÁQUINA</h3>
+
+                    <button onclick="escolherModo('maquina')">
+                        Jogar
+                    </button>
+
+                </div>
+
+
+                <div class="card-amigo">
+
+                    <img src="../../assets/img/jogadores.png"
+                         alt="Dois jogadores"
+                         class="icone-amigo">
+
+                    <h3>CONTRA UM<br>AMIGO</h3>
+
+                    <button onclick="escolherModo('2jogadores')">
+                        Jogar
+                    </button>
+
+                </div>
+
+
+            </section>
+
+        </div>
+
+
+        <div id="jogo">
+
+            <h1>Jogo da Velha</h1>
+
+            <p id="jogador">Vez do jogador: X</p>
+
+
+            <section class="tabuleiro">
+
+                <div class="casa" onclick="jogar(0)"></div>
+                <div class="casa" onclick="jogar(1)"></div>
+                <div class="casa" onclick="jogar(2)"></div>
+
+                <div class="casa" onclick="jogar(3)"></div>
+                <div class="casa" onclick="jogar(4)"></div>
+                <div class="casa" onclick="jogar(5)"></div>
+
+                <div class="casa" onclick="jogar(6)"></div>
+                <div class="casa" onclick="jogar(7)"></div>
+                <div class="casa" onclick="jogar(8)"></div>
+
+            </section>
+
+
+            <button onclick="reiniciar()">Reiniciar</button>
+
+        </div>
+
+    </main>
+
+
+    <script src="../../Js/velha.js"></script>
+
+</body>
+
+</html>
