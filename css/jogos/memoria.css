@@ -6,188 +6,581 @@
 
 body {
     min-height: 100vh;
-    background-color: #020d1d;
-    color: #E8F1FF;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.15)
+        ),
+        url("../../assets/img/mario/fundo mari 1.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: #ffffff;
+
     font-family: 'Rajdhani', sans-serif;
 }
 
-/*header*/
+
+/* CABEÇALHO */
+
 .cabecalho {
     width: 100%;
     height: 80px;
-    background: linear-gradient(90deg,
-            #07152F,
-            #0b0b31);
+
+    background: linear-gradient(
+        90deg,
+        #f5b400,
+        #e88b00
+    );
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 50px;
 
+    border-bottom: 5px solid #8b2600;
 }
 
 .logo h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 18px;
-    color: #F1F3F8;
-    letter-spacing: 2px;
+
+    color: #ffffff;
+
+    text-shadow:
+        3px 3px 0 #9b2400;
 }
 
 .usuario {
     display: flex;
     align-items: center;
+
     gap: 8px;
 }
 
 .icone-moeda {
     width: 32px;
     height: 32px;
+
     object-fit: contain;
 }
 
 .usuario span {
     font-family: 'Press Start 2P', cursive;
+
     font-size: 12px;
-    color: #F1F3F8;
+
+    color: #ffffff;
+
+    text-shadow: 2px 2px 0 #9b2400;
 }
+
+
+/* ÁREA DO JOGO */
 
 .memoria {
-    padding: 35px 55px;
-}
+    min-height: calc(100vh - 80px);
 
-.memoria h1 {
-    font-family: 'Press Start 2P', cursive;
+    padding: 25px 40px 50px;
+
     text-align: center;
-    font-size: 28px;
-    margin-bottom: 15px;
+
+    position: relative;
 }
 
-.memoria  p {
-    font-family: 'Press Start 2P', cursive;
-    text-align: center;
-    font-size: 14px;
-    margin-bottom: 40px;
-}
 
-.cartas {
-    display: grid;
-    grid-template-columns: repeat(4, 120px);
-    gap: 18px;
-    justify-content: center;
-}
-.carta {
-    width: 120px;
-    height: 120px;
-    background-color: #131d62;
-    border: 5px solid #7B2CFF;
-    border-radius: 18px;
+/* BOTÃO COGUMELO */
+
+.voltar {
+    position: absolute;
+
+    left: 35px;
+    top: 25px;
+
+    width: 85px;
+    height: 85px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 0 8px #7B2CFF,
-                0 0 12px #5A20FF;
 
     transition: 0.2s;
 }
 
-.carta:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 12px #9B4DFF,
-                0 0 25px #6A25FF;
+.voltar img {
+    width: 85px;
+    height: 85px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
 }
-.carta.virada {
-    background-color: #35145c;
+
+.voltar:hover {
+    transform: scale(1.12);
 }
+
+
+/* TÍTULO */
+
+.memoria > h1 {
+    font-family: 'Press Start 2P', cursive;
+
+    font-size: 28px;
+
+    color: #ffffff;
+
+    margin-top: 5px;
+    margin-bottom: 15px;
+
+    text-shadow:
+        4px 4px 0 #c72d00;
+}
+
+.memoria > p {
+    font-family: 'Press Start 2P', cursive;
+
+    font-size: 12px;
+
+    margin-bottom: 25px;
+
+    color: #fff;
+}
+
+
+/* INFORMAÇÕES */
+
+.informacoes {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.info {
+    min-width: 170px;
+
+    padding: 12px 25px;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    border: 3px solid #f5b400;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 0 #8b2600;
+}
+
+.info h3 {
+    font-family: 'Press Start 2P', cursive;
+
+    font-size: 10px;
+
+    margin-bottom: 10px;
+
+    color: #ffd43b;
+}
+
+.info span {
+    font-family: 'Press Start 2P', cursive;
+
+    font-size: 18px;
+
+    color: #ffffff;
+}
+
+
+/* CARTAS */
+
+.cartas {
+    width: 600px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+/* CARTA */
+
+.carta {
+    width: 135px;
+    height: 135px;
+
+    perspective: 1000px;
+
+    cursor: pointer;
+}
+
+
+/* PARTE INTERNA */
+
+.carta-interna {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition: transform 0.6s;
+}
+
+
+/* CARTA VIRADA */
+
+.carta.virada .carta-interna,
+.carta.acertada .carta-interna {
+    transform: rotateY(180deg);
+}
+
+
+/* FRENTE E VERSO */
+
+.frente,
+.verso {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    backface-visibility: hidden;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* VERSO */
+
+.verso {
+    background-color: #e52521;
+
+    border: 5px solid #ffd21f;
+
+    box-shadow:
+        0 5px 0 #8b2600;
+}
+
+.verso img {
+    width: 80%;
+    height: 80%;
+
+    object-fit: contain;
+}
+
+
+/* FRENTE */
 
 .frente {
-    display: none;
-    font-size: 50px;
+    background-color: #ffffff;
+
+    border: 5px solid #f5b400;
+
+    transform: rotateY(180deg);
+
+    box-shadow:
+        0 5px 0 #8b2600;
 }
 
-.carta.virada .frente {
-    display: block;
+.frente img {
+    width: 82%;
+    height: 82%;
+
+    object-fit: contain;
+}
+
+
+/* CARTA ACERTADA */
+
+.carta.acertada .frente {
+    border-color: #38b000;
+
+    box-shadow:
+        0 0 15px #38b000,
+        0 5px 0 #237500;
 }
 
 .carta.acertada {
-    border-color: #00D8C4;
     cursor: default;
 }
 
 
-/* INFORMAÇÕES DO LADO */
+/* TELA FINAL */
 
-.informacoes {
-    position: absolute;
+.resultado {
+    position: fixed;
 
-    top: 205px;
-    right: 55px;
+    top: 0;
+    left: 0;
 
-    width: 300px;
+    width: 100%;
+    height: 100%;
 
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    z-index: 10;
+}
+
+.resultado.mostrar {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    padding: 20px;
-
-    background-color: #04172D;
-    border: 2px solid #6947D8;
-    border-radius: 16px;
 }
 
 
-/* CADA CAIXA */
+/* CARD FINAL */
 
-.informacoes > div {
-    padding: 22px;
+.resultado-card {
+    width: 450px;
 
-    background-color: #020d1d;
+    padding: 35px;
 
-    border: 2px solid #6947D8;
-    border-radius: 14px;
+    background: #f5b400;
+
+    border: 6px solid #8b2600;
+
+    border-radius: 20px;
 
     text-align: center;
+
+    box-shadow:
+        0 10px 0 #5f1b00,
+        0 0 30px rgba(0, 0, 0, 0.8);
+
+    animation: aparecer 0.4s ease;
 }
 
-
-/* TÍTULOS */
-
-.informacoes h3 {
-    font-size: 19px;
-    margin-bottom: 15px;
-}
-
-
-/* NÚMERO DA PONTUAÇÃO */
-
-#pontuacao {
+.resultado-card h2 {
     font-family: 'Press Start 2P', cursive;
-    font-size: 24px;
-    color: #FFD21F;
-}
 
-
-/* TEMPO */
-
-#tempo {
-    font-family: 'Press Start 2P', cursive;
     font-size: 22px;
-    color: #00D8F5;
+
+    color: #ffffff;
+
+    text-shadow:
+        3px 3px 0 #c72d00;
+
+    margin-bottom: 20px;
 }
-.voltar {
-    display: inline-block;
 
-    padding: 10px 20px;
-
-    color: #F1F3F8;
-    text-decoration: none;
-
+.resultado-card > p {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 20px;
+
+    font-size: 22px;
+
     font-weight: 700;
 
-    border: 3px solid #8A3FFF;
+    color: #ffffff;
+
+    margin-bottom: 25px;
+}
+
+
+/* RESULTADO */
+
+.resultado-info {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.resultado-info div {
+    background: #ffffff;
+
+    padding: 15px 20px;
+
     border-radius: 10px;
+
+    min-width: 140px;
+}
+
+.resultado-info span {
+    display: block;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #333;
+
+    margin-bottom: 8px;
+}
+
+.resultado-info strong {
+    font-family: 'Press Start 2P', cursive;
+
+    font-size: 18px;
+
+    color: #e52521;
+}
+
+
+/* BOTÕES */
+
+.resultado-botoes {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.botao-lobby,
+#jogarNovamente {
+    min-width: 160px;
+
+    padding: 13px 15px;
+
+    border: 3px solid #8b2600;
+
+    border-radius: 9px;
+
+    background: #e52521;
+
+    color: #ffffff;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 0 #721b00;
+
+    transition: 0.15s;
+}
+
+.botao-lobby:hover,
+#jogarNovamente:hover {
+    transform: translateY(-2px);
+
+    background: #ff302b;
+}
+
+
+/* ANIMAÇÃO DO CARD */
+
+@keyframes aparecer {
+
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 
 }
 
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 750px) {
+
+    .cartas {
+        width: 100%;
+
+        grid-template-columns: repeat(3, 115px);
+
+        justify-content: center;
+    }
+
+    .carta {
+        width: 115px;
+        height: 115px;
+    }
+
+    .voltar {
+        width: 65px;
+        height: 65px;
+
+        left: 15px;
+        top: 20px;
+    }
+
+    .voltar img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .memoria > h1 {
+        font-size: 20px;
+
+        margin-top: 20px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .cabecalho {
+        padding: 0 20px;
+    }
+
+    .cartas {
+        grid-template-columns: repeat(3, 90px);
+
+        gap: 10px;
+    }
+
+    .carta {
+        width: 90px;
+        height: 90px;
+    }
+
+    .informacoes {
+        gap: 10px;
+    }
+
+    .info {
+        min-width: 130px;
+
+        padding: 10px;
+    }
+
+    .resultado-card {
+        width: 90%;
+
+        padding: 25px 15px;
+    }
+
+    .resultado-botoes {
+        flex-direction: column;
+    }
+
+}

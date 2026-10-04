@@ -1,111 +1,253 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Jogo da Memória</title>
-
     <link rel="stylesheet" href="../../css/jogos/memoria.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&display=swap"
+        rel="stylesheet">
 </head>
-
 <body>
+    <audio id="musica" loop>
+        <source src="../../assets/img/mario/mario.mp3" type="audio/mpeg">
+    </audio>
 
     <header class="cabecalho">
-
         <div class="logo">
-
             <h1>GameTec</h1>
-
         </div>
 
         <div class="usuario">
-
-            <img src="/assets/img/moeda.png" alt="Moedas" class="icone-moeda">
-
+            <img
+                src="/assets/img/moeda.png"
+                alt="Moedas"
+             class="icone-moeda">
             <span>01802</span>
-
         </div>
-
     </header>
-
-
     <main class="memoria">
-        <a href="./jogos.html" class="voltar">← Voltar</a>
+        <a href="./jogos.html" class="voltar">
+            <img
+                src="../../assets/img/mario/voltar.png"
+                alt="Voltar">
+        </a>
         <h1>Jogo da Memória</h1>
 
-        <p>Encontre os pares!</p>
+        <p>Encontre todos os pares!</p>
 
-        <section class="cartas">
-
-            <div class="carta" onclick="virar(this)">
-                <div class="frente">⭐</div>
-            </div>
-
-            <div class="carta" onclick="virar(this)">
-                <div class="frente">⭐</div>
-            </div>
-
-            <div class="carta" onclick="virar(this)">
-                <div class="frente">🎮</div>
-            </div>
-
-            <div class="carta" onclick="virar(this)">
-                <div class="frente">🎮</div>
-            </div>
-
-            <div class="carta" onclick="virar(this)">
-                <div class="frente">👾</div>
-            </div>
-
-            <div class="carta" onclick="virar(this)">
-                <div class="frente">👾</div>
-            </div>
-
-            <div class="carta" onclick="virar(this)">
-                <div class="frente">🚀</div>
-            </div>
-
-            <div class="carta" onclick="virar(this)">
-                <div class="frente">🚀</div>
-            </div>
-
-            <div class="carta" onclick="virar(this)">
-                <div class="frente">🎯</div>
-            </div>
-
-            <div class="carta" onclick="virar(this)">
-                <div class="frente">🎯</div>
-            </div>
-
-            <div class="carta" onclick="virar(this)">
-                <div class="frente">🏆</div>
-            </div>
-
-            <div class="carta" onclick="virar(this)">
-                <div class="frente">🏆</div>
-            </div>
-
-        </section>
-
-
-        <div class="informacoes">
-
-            <div>
+        <section class="informacoes">
+            <div class="info">
                 <h3>PONTUAÇÃO</h3>
                 <span id="pontuacao">0</span>
             </div>
 
-            <div>
-                <h3>TEMPO</h3>
+            <div class="info">
+              <h3>TEMPO</h3>
                 <span id="tempo">00:00</span>
+            </div>
+        </section>
+
+        <section class="cartas">
+            <div class="carta" data-par="mario">
+                <div class="carta-interna">
+
+                    <div class="verso">
+                        <img src="../../assets/img/mario/verso.png" alt="?">
+                    </div>
+
+                    <div class="frente">
+                        <img src="../../assets/img/mario/mario.jpg" alt="Mario">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="carta" data-par="luigi">
+                <div class="carta-interna">
+                    <div class="verso">
+                        <img src="../../assets/img/mario/verso.png" alt="?">
+                    </div>
+                    <div class="frente">
+                        <img src="../../assets/img/mario/luigi.jpg" alt="Luigi">
+                    </div>
+                </div>
+            </div>
+            <div class="carta" data-par="dino">
+                <div class="carta-interna">
+                    <div class="verso">
+                        <img src="../../assets/img/mario/verso.png" alt="?">
+                    </div>
+                    <div class="frente">
+                        <img src="../../assets/img/mario/dino.jpg" alt="Dino">
+                    </div>
+                </div>
+            </div>
+
+            <div class="carta" data-par="princesa">
+                <div class="carta-interna">
+
+                    <div class="verso">
+                        <img src="../../assets/img/mario/verso.png" alt="?">
+                    </div>
+
+                    <div class="frente">
+                        <img src="../../assets/img/mario/princesa.jpg" alt="Princesa">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="carta" data-par="cone">
+                <div class="carta-interna">
+
+                    <div class="verso">
+                        <img src="../../assets/img/mario/verso.png" alt="?">
+                    </div>
+
+                    <div class="frente">
+                        <img src="../../assets/img/mario/cone.jpg" alt="Cone">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="carta" data-par="estrela">
+                <div class="carta-interna">
+
+                    <div class="verso">
+                        <img src="../../assets/img/mario/verso.png" alt="?">
+                    </div>
+
+                    <div class="frente">
+                        <img src="../../assets/img/mario/estrela.jpg" alt="Estrela">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="carta" data-par="mario">
+                <div class="carta-interna">
+                    <div class="verso">
+                        <img src="../../assets/img/mario/verso.png" alt="?">
+                    </div>
+
+                    <div class="frente">
+                        <img src="../../assets/img/mario/mario.jpg" alt="Mario">
+                    </div>
+                </div>
+            </div>
+
+            <div class="carta" data-par="luigi">
+                <div class="carta-interna">
+                    <div class="verso">
+                        <img src="../../assets/img/mario/verso.png" alt="?">
+                    </div>
+                    <div class="frente">
+                        <img src="../../assets/img/mario/luigi.jpg" alt="Luigi">
+                    </div>
+                </div>
+            </div>
+            <div class="carta" data-par="dino">
+                <div class="carta-interna">
+
+                    <div class="verso">
+                        <img src="../../assets/img/mario/verso.png" alt="?">
+                    </div>
+
+                    <div class="frente">
+                        <img src="../../assets/img/mario/dino.jpg" alt="Dino">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="carta" data-par="princesa">
+                <div class="carta-interna">
+                    <div class="verso">
+                        <img src="../../assets/img/mario/verso.png" alt="?">
+                    </div>
+
+                    <div class="frente">
+                        <img src="../../assets/img/mario/princesa.jpg" alt="Princesa">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="carta" data-par="cone">
+                <div class="carta-interna">
+
+                    <div class="verso">
+                        <img src="../../assets/img/mario/verso.png" alt="?">
+                    </div>
+
+                    <div class="frente">
+                        <img src="../../assets/img/mario/cone.jpg" alt="Cone">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="carta" data-par="estrela">
+                <div class="carta-interna">
+
+                    <div class="verso">
+                        <img src="../../assets/img/mario/verso.png" alt="?">
+                    </div>
+
+                    <div class="frente">
+                        <img src="../../assets/img/mario/estrela.jpg" alt="Estrela">
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <div class="resultado" id="resultado">
+
+            <div class="resultado-card">
+
+                <h2>PARABÉNS!</h2>
+
+                <p>Você encontrou todos os pares!</p>
+
+                <div class="resultado-info">
+
+                    <div>
+                        <span>Pontuação</span>
+                        <strong id="pontuacaoFinal">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Tempo</span>
+                        <strong id="tempoFinal">00:00</strong>
+                    </div>
+
+                </div>
+
+                <div class="resultado-botoes">
+
+                    <a href="./jogos.html" class="botao-lobby">
+                        Voltar ao Lobby
+                    </a>
+
+                    <button id="jogarNovamente">
+                        Jogar Novamente
+                    </button>
+
+                </div>
+
             </div>
 
         </div>

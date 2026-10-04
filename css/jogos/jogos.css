@@ -3,62 +3,76 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     min-height: 100vh;
-    background-color: #020d1d;
-    color: #E8F1FF;
+     background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .7)), url("../../assets/img/mario/fundo\ mari\ 1.jpg");
+    color: #fff;
     font-family: 'Rajdhani', sans-serif;
 }
-
-/*header*/
 .cabecalho {
     width: 100%;
     height: 80px;
-    background: linear-gradient(90deg,
-            #07152F,
-            #0b0b31);
+    background: linear-gradient(90deg, #f5b400, #e88b00);
+    border-bottom: 5px solid #8b2600;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 50px;
-
 }
-
 .logo h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 18px;
     color: #F1F3F8;
     letter-spacing: 2px;
 }
-
 .usuario {
     display: flex;
     align-items: center;
     gap: 8px;
 }
-
 .icone-moeda {
     width: 32px;
     height: 32px;
     object-fit: contain;
 }
-
 .usuario span {
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
     color: #F1F3F8;
 }
-
-
+.inicio {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+}
+.voltar {
+    align-self: flex-start;
+    margin-left: 50px;
+    padding: 8px 18px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    border: 3px solid #f5a400;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #f5a400;
+    transition: 0.2s ease;
+}
+.voltar:hover {
+    background: #f5a400;
+    color: #fff;
+    transform: translateY(-2px);
+}
 .inicio h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 21px;
-    color: #F1F3F8;
+    color: #fff;
     letter-spacing: 2px;
     margin-bottom: 50px;
 }
-
 .opcoes {
     display: flex;
     justify-content: center;
@@ -66,145 +80,62 @@ body {
     gap: 70px;
     width: 100%;
 }
-
-.card-velha {
-    width: 275px;
-    height: 280px;
-    background-color: #131d62;
-    border: 4px solid #6947D8;
-    border-radius: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-.icone-velha {
-    width: 135px;
-    height: 135px;
-    object-fit: contain;
-    margin-bottom: 25px;
-}
-
-.card-velha h3 {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 21px;
-    font-weight: 700;
-    color: #F1F3F8;
-    margin-bottom: 25px;
-}
-
-.card-velha button {
-    width: 130px;
-    height: 45px;
-    background-color: #6947D8;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-   
-}
-.card-velha button a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-.card-velha button h5 {
-    margin: 0;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 21px;
-    font-weight: 700;
-    color: #F1F3F8;
-}
-
-
-.card-forca {
-    width: 275px;
-    height: 280px;
-    background-color: #013b3c;
-    border: 4px solid #00d8c4;
-    border-radius: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-   
-}
-.icone-forca {
-    width: 130px;
-    height: 130px;
-    object-fit: contain;
-    margin-bottom: 30px;
-}
-
-.card-forca h3 {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 21px;
-    font-weight: 700;
-    color: #F1F3F8;
-    margin-bottom: 25px;
-}
-.card-forca button {
-    width: 130px;
-    height: 45px;
-    background-color: #00CDBB;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-.card-forca button a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-.card-forca button h5 {
-    margin: 0;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 21px;
-    font-weight: 700;
-    color: #F1F3F8;
-}
-
+.card-velha,
+.card-forca,
 .card-memoria {
     width: 275px;
     height: 280px;
-    background-color: #131d62;
-    border: 4px solid #6947D8;
+    background-color: #0d2352;
+    border: 4px solid #f5a400;
     border-radius: 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: 0.2s ease;
 }
+.card-velha:hover,
+.card-forca:hover,
+.card-memoria:hover {
+    transform: translateY(-5px);
+}
+.icone-velha,
+.icone-forca,
 .icone-memoria {
-    width: 135px;
-    height: 135px;
+    width: 130px;
+    height: 130px;
     object-fit: contain;
     margin-bottom: 25px;
+    filter: sepia(1) saturate(8) hue-rotate(355deg) brightness(1.1);
 }
+.card-velha h3,
+.card-forca h3,
 .card-memoria h3 {
     font-family: 'Rajdhani', sans-serif;
     font-size: 21px;
     font-weight: 700;
-    color: #F1F3F8;
+    color: #fff;
     margin-bottom: 25px;
 }
-
+.card-velha button,
+.card-forca button,
 .card-memoria button {
     width: 130px;
     height: 45px;
-    background-color: #6947D8;
+    background-color: #f5a400;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    transition: 0.2s ease;
 }
-
+.card-velha button:hover,
+.card-forca button:hover,
+.card-memoria button:hover {
+    background-color: #e88b00;
+    transform: translateY(-2px);
+}
+.card-velha button a,
+.card-forca button a,
 .card-memoria button a {
     width: 100%;
     height: 100%;
@@ -213,43 +144,12 @@ body {
     justify-content: center;
     text-decoration: none;
 }
-
+.card-velha button h5,
+.card-forca button h5,
 .card-memoria button h5 {
     margin: 0;
     font-family: 'Rajdhani', sans-serif;
     font-size: 21px;
     font-weight: 700;
-    color: #F1F3F8;
+    color: #fff;
 }
-.inicio {
-    min-height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding-top: 15px;
-}
-
-.voltar {
-    align-self: flex-start;
-    margin-left: 50px;
-
-    padding: 8px 18px;
-
-    color: #F1F3F8;
-    text-decoration: none;
-
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-
-    border: 3px solid #8A3FFF;
-    border-radius: 10px;
-
-    box-shadow: 0 0 8px #8A3FFF,
-                0 0 18px #6A25FF;
-
-    transition: 0.2s;
-}
-
-

@@ -1,32 +1,24 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     min-height: 100vh;
-    background-color: #020d1d;
-    color: #E8F1FF;
+    background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .7)), url("../assets/img/mario/fundo mari 1.jpg");
+    color: #fff;
     font-family: 'Rajdhani', sans-serif;
 }
-
 .cabecalho {
     width: 100%;
     height: 80px;
-   background: linear-gradient(
-        90deg,
-        #07152F,
-        #0b0b31
-    );
+    background: linear-gradient(90deg, #f5b400, #e88b00);
+    border-bottom: 5px solid #8b2600;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 50px;
-
 }
-
 .logo h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 18px;
@@ -38,13 +30,11 @@ body {
     align-items: center;
     gap: 8px;
 }
-
 .icone-moeda {
     width: 32px;
     height: 32px;
     object-fit: contain;
 }
-
 .usuario span {
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
@@ -57,12 +47,10 @@ body {
     align-items: center;
     padding-top: 70px;
 }
-
-
 .inicio h4 {
-    font-family: "poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 20px;
-    font-weight: 69;
+    font-weight: 600;
     color: #E8F1FF;
     margin-bottom: 45px;
 }
@@ -72,8 +60,6 @@ body {
     color: #F1F3F8;
     margin-bottom: 20px;
 }
-
-
 .opcoes {
     display: flex;
     justify-content: center;
@@ -81,11 +67,11 @@ body {
     gap: 70px;
     width: 100%;
 }
-
 .card {
     width: 275px;
     height: 280px;
-    background-color: #04172D;
+    background-color: #0d2352;
+    border: 4px solid #f5a400;
     border-radius: 18px;
     display: flex;
     flex-direction: column;
@@ -94,55 +80,29 @@ body {
     text-decoration: none;
     transition: 0.2s ease;
 }
-
-.card-jogos {
-    border: 4px solid #6947D8;
+.card h3,
+.card .seta {
+    color: #f5a400;
 }
-
-.card-jogos h3,
-.card-jogos .seta {
-    color: #7855FF;
-}
-
-.card-resultados {
-    border: 4px solid #B08B20;
-}
-
-.card-resultados h3,
-.card-resultados .seta {
-    color: #F5C33B;
-}
-
-.card-configuracoes {
-    border: 4px solid #008F8B;
-}
-
-.card-configuracoes h3,
-.card-configuracoes .seta {
-    color: #00D8C4;
-}
-
 .icone-card {
     width: 55px;
     height: 55px;
     object-fit: contain;
     margin-bottom: 25px;
+    filter: sepia(1) saturate(8) hue-rotate(355deg) brightness(1.1);
 }
-
 .card h3 {
     font-family: 'Press Start 2P', cursive;
     font-size: 15px;
     text-align: center;
     margin-bottom: 25px;
 }
-
 .card .seta {
     font-family: Arial, sans-serif;
     font-size: 38px;
     font-weight: bold;
     line-height: 1;
 }
-
 .card:hover {
     transform: translateY(-5px);
 }
