@@ -2,9 +2,7 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Jogo da Velha</title>
@@ -14,8 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -27,22 +25,17 @@
         </div>
 
         <div class="usuario">
-
-            <img src="/assets/img/moeda.png"
-                 alt="Moedas"
-                 class="icone-moeda">
-
-            <span>01802</span>
+            <img src="/assets/img/moeda.png" alt="Moedas" class="icone-moeda">
 
         </div>
 
     </header>
 
-
     <main class="inicio">
 
-        <a href="./jogos.html" class="voltar">← Voltar</a>
-
+        <a href="./jogos.html" class="voltar">
+            <img src="../../assets/img/mario/voltar.png" alt="Voltar">
+        </a>
 
         <div id="escolha">
 
@@ -50,75 +43,97 @@
 
             <p>Escolha como você vai jogar</p>
 
-
             <section class="opcoes">
 
+                <div class="card-jogo">
 
-                <div class="card-maquina">
+                    <img src="../../assets/img/mario/mario solo.png" alt="Mario jogando" class="imagem-jogo">
 
-                    <img src="../../assets/img/maquina.png"
-                         alt="Máquina"
-                         class="icone-maquina">
+                    <h3>CONTRA A MÁQUINA</h3>
 
-                    <h3>CONTRA A<br>MÁQUINA</h3>
-
-                    <button onclick="escolherModo('maquina')">
+                    <button id="botaoMaquina">
                         Jogar
                     </button>
 
                 </div>
 
+                <div class="card-jogo">
 
-                <div class="card-amigo">
+                    <img src="../../assets/img/mario/vs.png" alt="Mario e Luigi jogando" class="imagem-jogo">
 
-                    <img src="../../assets/img/jogadores.png"
-                         alt="Dois jogadores"
-                         class="icone-amigo">
+                    <h3>CONTRA UM AMIGO</h3>
 
-                    <h3>CONTRA UM<br>AMIGO</h3>
-
-                    <button onclick="escolherModo('2jogadores')">
+                    <button id="botaoAmigo">
                         Jogar
                     </button>
 
                 </div>
-
 
             </section>
 
         </div>
-
 
         <div id="jogo">
 
             <h1>Jogo da Velha</h1>
 
-            <p id="jogador">Vez do jogador: X</p>
-
+            <p id="jogador">
+                Vez do jogador: X
+            </p>
 
             <section class="tabuleiro">
 
-                <div class="casa" onclick="jogar(0)"></div>
-                <div class="casa" onclick="jogar(1)"></div>
-                <div class="casa" onclick="jogar(2)"></div>
+                <div class="casa"></div>
+                <div class="casa"></div>
+                <div class="casa"></div>
 
-                <div class="casa" onclick="jogar(3)"></div>
-                <div class="casa" onclick="jogar(4)"></div>
-                <div class="casa" onclick="jogar(5)"></div>
+                <div class="casa"></div>
+                <div class="casa"></div>
+                <div class="casa"></div>
 
-                <div class="casa" onclick="jogar(6)"></div>
-                <div class="casa" onclick="jogar(7)"></div>
-                <div class="casa" onclick="jogar(8)"></div>
+                <div class="casa"></div>
+                <div class="casa"></div>
+                <div class="casa"></div>
 
             </section>
 
+            <button id="botaoReiniciar">
+                Reiniciar
+            </button>
 
-            <button onclick="reiniciar()">Reiniciar</button>
+        </div>
+
+        <div class="resultado" id="resultado">
+
+            <div class="resultado-card">
+
+                <img src="../../assets/img/mario/voltar.png" alt="Estrela" class="icone-resultado">
+
+                <h2 id="resultadoTitulo">
+                    PARABÉNS!
+                </h2>
+
+                <p id="resultadoMensagem">
+                    Você venceu!
+                </p>
+
+                <div class="resultado-botoes">
+
+                    <button id="jogarNovamente">
+                        Jogar Novamente
+                    </button>
+
+                    <a href="./jogos.html" class="botao-lobby">
+                        Voltar ao Lobby
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
     </main>
-
 
     <script src="../../Js/velha.js"></script>
 

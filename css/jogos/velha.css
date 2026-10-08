@@ -3,197 +3,523 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     min-height: 100vh;
-    background: #0b358f;
-    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .7)), url("../../assets/img/mario/fundo mari 1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
     font-family: 'Rajdhani', sans-serif;
 }
+
 .cabecalho {
-    width: 100%;
     height: 80px;
-    background: linear-gradient(90deg, #f5b400, #e88b00);
-    border-bottom: 5px solid #8b2600;
+    padding: 0 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 50px;
+    background: linear-gradient(90deg, #f5b400, #e88b00);
+    border-bottom: 5px solid #8b2600;
 }
-.logo h1 {
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo h1,
+.usuario span {
     font-family: 'Press Start 2P', cursive;
-    font-size: 18px;
-    color: #F1F3F8;
-    letter-spacing: 2px;
+    text-shadow: 3px 3px #8b2600;
 }
+
+.logo h1 {
+    font-size: 18px;
+}
+
 .usuario {
     display: flex;
     align-items: center;
     gap: 8px;
 }
+
 .icone-moeda {
     width: 32px;
-    height: 32px;
-    object-fit: contain;
 }
+
 .usuario span {
-    font-family: 'Press Start 2P', cursive;
     font-size: 12px;
-    color: #F1F3F8;
 }
+
 .inicio {
     min-height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 15px;
-}
-.voltar {
-    align-self: flex-start;
-    margin-left: 50px;
-    padding: 8px 18px;
-    color: #fff;
-    text-decoration: none;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    border: 3px solid #f5a400;
-    border-radius: 10px;
-    transition: 0.2s ease;
-}
-.voltar:hover {
-    background: #f5a400;
-    transform: translateY(-2px);
-}
-#escolha {
-    width: 100%;
+    padding: 45px 40px 30px;
     text-align: center;
-    margin-top: 20px;
+    position: relative;
 }
-#escolha h1 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 26px;
-    color: #fff;
+
+.voltar {
+    position: absolute;
+    top: 25px;
+    left: 35px;
+}
+
+.voltar img {
+    width: 65px;
+    transition: .2s ease;
+}
+
+.voltar:hover img {
+    transform: scale(1.1);
+}
+
+.icone-resultado {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
     margin-bottom: 15px;
 }
-#escolha p {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
-    color: #fff;
-    margin-bottom: 32px;
+
+#escolha {
+    width: 100%;
+    margin-top: 20px;
 }
+
+#escolha h1 {
+    margin-bottom: 15px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 27px;
+    text-shadow: 4px 4px #c72d00;
+}
+
+#escolha p {
+    margin-bottom: 40px;
+    color: #ffd43b;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 9px;
+}
+
 .opcoes {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 50px;
-    width: 100%;
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
 }
-.card-maquina,
-.card-amigo {
-    width: 295px;
-    height: 275px;
-    background-color: #0d2352;
-    border: 4px solid #f5a400;
-    border-radius: 18px;
+
+.card-jogo {
+    width: 420px;
+    min-height: 330px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    transition: 0.2s ease;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, .8);
+    border: 3px solid #f5b400;
+    border-radius: 15px;
+    transition: .2s ease;
 }
-.card-maquina:hover,
-.card-amigo:hover {
+
+.card-jogo:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 15px #f5a400;
 }
-.icone-maquina,
-.icone-amigo {
-    width: 65px;
-    height: 65px;
+
+.imagem-jogo {
+    width: 100%;
+    height: 190px;
     object-fit: contain;
-    margin-bottom: 8px;
+    border-radius: 10px;
 }
-.card-maquina h3,
-.card-amigo h3 {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 13px;
+
+.card-jogo h3 {
+    color: #ffd43b;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 10px 0;
 }
-.card-maquina button,
-.card-amigo button {
+
+.card-jogo button {
     width: 155px;
     height: 43px;
-    background-color: #f5a400;
-    border: none;
-    border-radius: 8px;
-    color: #fff;
+    background: #e88b00;
+    border: 2px solid #ffd43b;
+    border-radius: 6px;
+    color: white;
     font-family: 'Rajdhani', sans-serif;
     font-size: 19px;
     font-weight: 700;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: .2s ease;
 }
-.card-maquina button:hover,
-.card-amigo button:hover {
-    background-color: #e88b00;
+
+.card-jogo button:hover {
+    background: #f5b400;
     transform: translateY(-2px);
 }
+
 #jogo {
     display: none;
     width: 100%;
-    text-align: center;
-    margin-top: 15px;
+    margin-top: 20px;
 }
+
 #jogo h1 {
+    margin-bottom: 15px;
     font-family: 'Press Start 2P', cursive;
-    font-size: 25px;
-    color: #fff;
-    margin-bottom: 10px;
+    font-size: 27px;
+    text-shadow: 4px 4px #c72d00;
 }
+
 #jogador {
-    font-size: 20px;
-    font-weight: 600;
     margin-bottom: 25px;
+    color: #ffd43b;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
 }
+
 .tabuleiro {
+    width: max-content;
+    margin: auto;
+    padding: 8px;
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
-    gap: 8px;
-    justify-content: center;
-    margin: 0 auto;
+    gap: 7px;
+    background: #f5b400;
+    border: 4px solid #8b2600;
+    border-radius: 10px;
+    box-shadow: 0 8px 0 #8b2600;
 }
+
 .casa {
     width: 100px;
     height: 100px;
-    background: #0d2352;
-    border: 2px solid #f5a400;
-    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
+    background: rgba(0, 0, 0, .8);
+    border: 2px solid #ffd43b;
+    border-radius: 7px;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 32px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.casa:hover {
+    background: #e88b00;
+    transform: scale(1.03);
+}
+
+#botaoReiniciar {
+    width: 155px;
+    height: 43px;
+    margin-top: 30px;
+    background: #e88b00;
+    border: 2px solid #ffd43b;
+    border-radius: 6px;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 19px;
     font-weight: 700;
     cursor: pointer;
+    transition: .2s ease;
 }
-#jogo > button {
-    width: 150px;
-    height: 42px;
-    margin-top: 28px;
-    background: #f5a400;
-    border: none;
-    border-radius: 10px;
-    color: #fff;
+
+#botaoReiniciar:hover {
+    background: #f5b400;
+    transform: translateY(-2px);
+}
+
+.resultado {
+    display: none;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .75);
+    z-index: 10;
+}
+
+.resultado-card {
+    width: 380px;
+    padding: 30px;
+    text-align: center;
+    background: rgba(0, 0, 0, .9);
+    border: 3px solid #f5b400;
+    border-radius: 15px;
+    box-shadow: 0 8px 0 #8b2600;
+}
+
+.resultado-card h2 {
+    margin-bottom: 20px;
+    color: #ffd43b;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    text-shadow: 3px 3px #c72d00;
+}
+
+.resultado-card p {
+    margin-bottom: 25px;
+    color: #ddd;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.resultado-botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.resultado-botoes button,
+.botao-lobby {
+    width: 100%;
+    min-height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e88b00;
+    border: 2px solid #ffd43b;
+    border-radius: 6px;
+    color: white;
     font-family: 'Rajdhani', sans-serif;
     font-size: 18px;
     font-weight: 700;
+    text-decoration: none;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: .2s ease;
 }
-#jogo > button:hover {
-    background: #e88b00;
+
+.resultado-botoes button:hover,
+.botao-lobby:hover {
+    background: #f5b400;
     transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+}
+
+@media (max-width: 850px) {
+    .cabecalho {
+        padding: 0 25px;
+    }
+
+    .inicio {
+        padding: 70px 25px 30px;
+    }
+
+    .voltar {
+        top: 15px;
+        left: 20px;
+    }
+
+    .voltar img {
+        width: 60px;
+    }
+
+    .opcoes {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .card-jogo {
+        width: 90%;
+        max-width: 420px;
+    }
+
+    #escolha h1,
+    #jogo h1 {
+        font-size: 23px;
+    }
+
+    .resultado-card {
+        width: 85%;
+        max-width: 380px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+    .cabecalho {
+        height: 70px;
+        padding: 0 15px;
+    }
+
+    .logo {
+        gap: 6px;
+    }
+
+    .logo h1 {
+        font-size: 13px;
+    }
+
+    .usuario {
+        gap: 5px;
+    }
+
+    .icone-moeda {
+        width: 24px;
+    }
+
+    .usuario span {
+        font-size: 9px;
+    }
+
+    .inicio {
+        min-height: calc(100vh - 70px);
+        padding: 85px 15px 30px;
+    }
+
+    .voltar {
+        top: 12px;
+        left: 12px;
+    }
+
+    .voltar img {
+        width: 55px;
+    }
+
+    .icone-resultado {
+        width: 65px;
+        height: 65px;
+    }
+
+    #escolha,
+    #jogo {
+        margin-top: 15px;
+    }
+
+    #escolha h1,
+    #jogo h1 {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    #escolha p {
+        font-size: 8px;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .opcoes {
+        gap: 20px;
+    }
+
+    .card-jogo {
+        width: 100%;
+        min-height: 280px;
+        padding: 15px;
+    }
+
+    .imagem-jogo {
+        height: 150px;
+    }
+
+    .card-jogo h3 {
+        font-size: 10px;
+    }
+
+    .card-jogo button,
+    #botaoReiniciar {
+        width: 145px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    #jogador {
+        font-size: 8px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .tabuleiro {
+        grid-template-columns: repeat(3, min(24vw, 80px));
+        grid-template-rows: repeat(3, min(24vw, 80px));
+        gap: 5px;
+        padding: 6px;
+    }
+
+    .casa {
+        width: min(24vw, 80px);
+        height: min(24vw, 80px);
+        font-size: 22px;
+    }
+
+    #botaoReiniciar {
+        margin-top: 25px;
+    }
+
+    .resultado {
+        padding: 15px;
+    }
+
+    .resultado-card {
+        width: 100%;
+        max-width: 350px;
+        padding: 22px 16px;
+    }
+
+    .resultado-card h2 {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .resultado-card p {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    .resultado-botoes button,
+    .botao-lobby {
+        font-size: 16px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 360px) {
+    .cabecalho {
+        padding: 0 10px;
+    }
+
+    .logo h1 {
+        font-size: 10px;
+    }
+
+    .icone-moeda {
+        width: 20px;
+    }
+
+    .usuario span {
+        font-size: 7px;
+    }
+
+    .voltar img {
+        width: 48px;
+    }
+
+    #escolha h1,
+    #jogo h1 {
+        font-size: 14px;
+    }
+
+    #escolha p {
+        font-size: 7px;
+    }
+
+    .card-jogo h3 {
+        font-size: 9px;
+    }
+
+    .casa {
+        font-size: 18px;
+    }
+
+    .resultado-card h2 {
+        font-size: 12px;
+    }
 }

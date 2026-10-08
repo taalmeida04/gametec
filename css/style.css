@@ -3,12 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .7)), url("../assets/img/mario/fundo mari 1.jpg");
     color: #fff;
     font-family: 'Rajdhani', sans-serif;
 }
+
 .cabecalho {
     width: 100%;
     height: 80px;
@@ -19,27 +21,32 @@ body {
     justify-content: space-between;
     padding: 0 50px;
 }
+
 .logo h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 18px;
     color: #F1F3F8;
     letter-spacing: 2px;
 }
+
 .usuario {
     display: flex;
     align-items: center;
     gap: 8px;
 }
+
 .icone-moeda {
     width: 32px;
     height: 32px;
     object-fit: contain;
 }
+
 .usuario span {
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
     color: #F1F3F8;
 }
+
 .inicio {
     min-height: calc(100vh - 80px);
     display: flex;
@@ -47,6 +54,7 @@ body {
     align-items: center;
     padding-top: 70px;
 }
+
 .inicio h4 {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
@@ -54,12 +62,14 @@ body {
     color: #E8F1FF;
     margin-bottom: 45px;
 }
+
 .inicio h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 40px;
     color: #F1F3F8;
     margin-bottom: 20px;
 }
+
 .opcoes {
     display: flex;
     justify-content: center;
@@ -67,6 +77,7 @@ body {
     gap: 70px;
     width: 100%;
 }
+
 .card {
     width: 275px;
     height: 280px;
@@ -80,10 +91,12 @@ body {
     text-decoration: none;
     transition: 0.2s ease;
 }
+
 .card h3,
 .card .seta {
     color: #f5a400;
 }
+
 .icone-card {
     width: 55px;
     height: 55px;
@@ -91,18 +104,159 @@ body {
     margin-bottom: 25px;
     filter: sepia(1) saturate(8) hue-rotate(355deg) brightness(1.1);
 }
+
 .card h3 {
     font-family: 'Press Start 2P', cursive;
     font-size: 15px;
     text-align: center;
     margin-bottom: 25px;
 }
+
 .card .seta {
     font-family: Arial, sans-serif;
     font-size: 38px;
     font-weight: bold;
     line-height: 1;
 }
+
 .card:hover {
     transform: translateY(-5px);
+}
+
+@media screen and (max-width: 1024px) {
+    .cabecalho {
+        padding: 0 30px;
+    }
+
+    .inicio {
+        padding: 60px 25px 40px;
+    }
+
+    .inicio h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .opcoes {
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 250px;
+        height: 260px;
+    }
+}
+
+/* CELULARES */
+@media screen and (max-width: 600px) {
+    .cabecalho {
+        height: 70px;
+        padding: 0 15px;
+        border-bottom-width: 4px;
+    }
+
+    .logo h1 {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .usuario {
+        gap: 5px;
+    }
+
+    .icone-moeda {
+        width: 24px;
+        height: 24px;
+    }
+
+    .usuario span {
+        font-size: 9px;
+    }
+
+    .inicio {
+        min-height: calc(100vh - 70px);
+        padding: 45px 15px 35px;
+    }
+
+    .inicio h4 {
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .inicio h1 {
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .opcoes {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+        height: 220px;
+        border-width: 3px;
+        border-radius: 14px;
+    }
+
+    .icone-card {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 20px;
+    }
+
+    .card h3 {
+        font-size: 11px;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+
+    .card .seta {
+        font-size: 30px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+@media screen and (max-width: 360px) {
+    .cabecalho {
+        padding: 0 10px;
+    }
+
+    .logo h1 {
+        font-size: 10px;
+    }
+
+    .usuario span {
+        font-size: 8px;
+    }
+
+    .icone-moeda {
+        width: 20px;
+        height: 20px;
+    }
+
+    .inicio h1 {
+        font-size: 18px;
+    }
+
+    .inicio h4 {
+        font-size: 14px;
+    }
+
+    .card {
+        max-width: 270px;
+        height: 200px;
+    }
+
+    .card h3 {
+        font-size: 10px;
+    }
 }

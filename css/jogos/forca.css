@@ -1,0 +1,415 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    }
+    
+    body{
+    min-height:100vh;
+    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.72)),url("../../assets/img/mario/fundo mari 1.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    color:white;
+    font-family:'Rajdhani',sans-serif;
+    }
+    
+    .cabecalho{
+    height:80px;
+    padding:0 50px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:linear-gradient(90deg,#f5b400,#e88b00);
+    border-bottom:5px solid #8b2600;
+    box-shadow:0 5px 15px rgba(0,0,0,.5);
+    }
+    
+    .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    }
+    
+    .logo h1,.usuario span{
+    font-family:'Press Start 2P',cursive;
+    text-shadow:3px 3px #8b2600;
+    }
+    
+    .logo h1{
+    font-size:18px;
+    }
+    
+    .usuario{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    }
+    
+    .icone-moeda{
+    width:32px;
+    }
+    
+    .usuario span{
+    font-size:12px;
+    }
+    
+    .inicio{
+    min-height:calc(100vh - 80px);
+    padding:45px 30px 40px;
+    text-align:center;
+    position:relative;
+    }
+    
+    .voltar{
+    position:absolute;
+    top:25px;
+    left:35px;
+    z-index:2;
+    }
+    
+    .voltar img{
+    width:65px;
+    transition:.2s ease;
+    filter:drop-shadow(0 4px 3px rgba(0,0,0,.5));
+    }
+    
+    .voltar:hover img{
+    transform:scale(1.1) rotate(-3deg);
+    }
+    
+    #jogo{
+    width:100%;
+    max-width:950px;
+    margin:20px auto 0;
+    padding:35px 40px 40px;
+    background:rgba(0,0,0,.72);
+    border:3px solid #f5b400;
+    border-radius:20px;
+    box-shadow:0 8px 0 #8b2600,0 15px 30px rgba(0,0,0,.45);
+    }
+    
+    #jogo h1{
+    margin-bottom:15px;
+    font-family:'Press Start 2P',cursive;
+    font-size:27px;
+    text-shadow:4px 4px #c72d00;
+    }
+    
+    .subtitulo{
+    margin-bottom:25px;
+    color:#ffd43b;
+    font-family:'Press Start 2P',cursive;
+    font-size:9px;
+    }
+    
+    .categoria{
+    display:inline-flex;
+    flex-direction:column;
+    gap:7px;
+    margin-bottom:20px;
+    padding:10px 20px;
+    background:rgba(245,180,0,.12);
+    border:2px solid #f5b400;
+    border-radius:8px;
+    }
+    
+    .categoria span{
+    color:#aaa;
+    font-family:'Press Start 2P',cursive;
+    font-size:7px;
+    }
+    
+    .categoria strong{
+    color:#ffd43b;
+    font-family:'Press Start 2P',cursive;
+    font-size:10px;
+    }
+    
+    .area-dica{
+    min-height:55px;
+    margin-bottom:25px;
+    }
+    
+    #botaoDica{
+    min-width:160px;
+    padding:9px 15px;
+    background:#111;
+    border:2px solid #ffd43b;
+    border-radius:7px;
+    color:#ffd43b;
+    font-family:'Rajdhani',sans-serif;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.2s ease;
+    }
+    
+    #botaoDica:hover{
+    background:#e88b00;
+    color:white;
+    transform:translateY(-2px);
+    }
+    
+    #botaoDica:disabled{
+    background:#333;
+    border-color:#666;
+    color:#888;
+    cursor:not-allowed;
+    transform:none;
+    }
+    
+    #dica{
+    max-width:650px;
+    margin:12px auto 0;
+    color:#ffd43b;
+    font-size:18px;
+    font-weight:600;
+    line-height:1.3;
+    }
+    
+    #palavra{
+    min-height:75px;
+    margin:10px auto 30px;
+    padding:15px 25px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    background:rgba(0,0,0,.45);
+    border:2px solid rgba(255,212,59,.5);
+    border-radius:12px;
+    width:fit-content;
+    max-width:100%;
+    }
+    
+    #palavra span{
+    width:42px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    border-bottom:4px solid #ffd43b;
+    font-family:'Press Start 2P',cursive;
+    font-size:21px;
+    text-shadow:2px 2px #8b2600;
+    }
+    
+    #erros{
+    display:inline-block;
+    margin-bottom:25px!important;
+    padding:8px 18px;
+    background:rgba(139,38,0,.45);
+    border:2px solid #e88b00;
+    border-radius:8px;
+    color:#ffd43b!important;
+    font-family:'Rajdhani',sans-serif!important;
+    font-size:20px!important;
+    font-weight:700;
+    }
+    
+    #letras{
+    max-width:650px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:9px;
+    }
+    
+    #letras button{
+    width:44px;
+    height:44px;
+    background:linear-gradient(#242424,#111);
+    border:2px solid #ffd43b;
+    border-radius:7px;
+    color:white;
+    font-family:'Press Start 2P',cursive;
+    font-size:11px;
+    cursor:pointer;
+    box-shadow:0 4px 0 #8b2600;
+    transition:.15s ease;
+    }
+    
+    #letras button:hover{
+    background:linear-gradient(#f5b400,#e88b00);
+    transform:translateY(-3px);
+    box-shadow:0 7px 0 #8b2600;
+    }
+    
+    #letras button:active{
+    transform:translateY(1px);
+    box-shadow:0 2px 0 #8b2600;
+    }
+    
+    #letras button:disabled{
+    background:#3a3a3a;
+    border-color:#666;
+    color:#888;
+    cursor:not-allowed;
+    box-shadow:none;
+    transform:none;
+    }
+    
+    #botaoReiniciar{
+    width:170px;
+    height:45px;
+    margin-top:35px;
+    background:linear-gradient(#f5b400,#e88b00);
+    border:2px solid #ffd43b;
+    border-radius:7px;
+    color:white;
+    font-family:'Rajdhani',sans-serif;
+    font-size:20px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 4px 0 #8b2600;
+    transition:.15s ease;
+    }
+    
+    #botaoReiniciar:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 0 #8b2600;
+    }
+    
+    .resultado{
+    display:none;
+    position:fixed;
+    inset:0;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,.78);
+    z-index:10;
+    padding:20px;
+    }
+    
+    .resultado-card{
+    width:400px;
+    padding:35px 30px;
+    text-align:center;
+    background:rgba(0,0,0,.97);
+    border:3px solid #f5b400;
+    border-radius:18px;
+    box-shadow:0 8px 0 #8b2600,0 15px 40px rgba(0,0,0,.6);
+    }
+    
+    .icone-resultado{
+    width:85px;
+    height:85px;
+    object-fit:contain;
+    margin-bottom:15px;
+    }
+    
+    .resultado-card h2{
+    margin-bottom:18px;
+    color:#ffd43b;
+    font-family:'Press Start 2P',cursive;
+    font-size:18px;
+    line-height:1.5;
+    text-shadow:3px 3px #c72d00;
+    }
+    
+    .resultado-card p{
+    margin-bottom:25px;
+    color:#ddd;
+    font-size:20px;
+    font-weight:700;
+    }
+    
+    .resultado-botoes{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    }
+    
+    .resultado-botoes button,.botao-lobby{
+    width:100%;
+    min-height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(#f5b400,#e88b00);
+    border:2px solid #ffd43b;
+    border-radius:7px;
+    color:white;
+    font-family:'Rajdhani',sans-serif;
+    font-size:19px;
+    font-weight:700;
+    text-decoration:none;
+    cursor:pointer;
+    box-shadow:0 4px 0 #8b2600;
+    transition:.15s ease;
+    }
+    
+    .resultado-botoes button:hover,.botao-lobby:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 0 #8b2600;
+    }
+    
+    @media(max-width:600px){
+    .cabecalho{
+    padding:0 20px;
+    }
+    
+    .inicio{
+    padding:35px 15px;
+    }
+    
+    .voltar{
+    left:15px;
+    }
+    
+    .voltar img{
+    width:55px;
+    }
+    
+    #jogo{
+    margin-top:25px;
+    padding:30px 15px;
+    border-radius:15px;
+    }
+    
+    #jogo h1{
+    font-size:18px;
+    }
+    
+    .subtitulo{
+    font-size:7px;
+    }
+    
+    #palavra{
+    gap:6px;
+    padding:12px 10px;
+    }
+    
+    #palavra span{
+    width:28px;
+    height:38px;
+    font-size:14px;
+    }
+    
+    #letras{
+    max-width:350px;
+    gap:7px;
+    }
+    
+    #letras button{
+    width:36px;
+    height:36px;
+    font-size:9px;
+    }
+    
+    #dica{
+    font-size:16px;
+    }
+    
+    .resultado-card{
+    width:95%;
+    padding:30px 20px;
+    }
+    
+    .resultado-card h2{
+    font-size:15px;
+    }
+    }

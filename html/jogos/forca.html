@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jogo da Forca</title>
+
+    <link rel="stylesheet" href="../../css/jogos/forca.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">
+            <h1>GameTec</h1>
+        </div>
+
+        <div class="usuario">
+            <img src="/assets/img/moeda.png" alt="Moedas" class="icone-moeda">
+           
+        </div>
+    </header>
+
+    <main class="inicio">
+
+        <a href="./jogos.html" class="voltar">
+            <img src="../../assets/img/mario/voltar.png" alt="Voltar">
+        </a>
+
+        <div id="jogo">
+
+            <h1>Jogo da Forca</h1>
+
+            <p class="subtitulo">
+                Descubra a palavra!
+            </p>
+
+            <div class="categoria">
+                <span>CATEGORIA</span>
+                <strong id="categoria">HARDWARE</strong>
+            </div>
+
+            <div class="area-dica">
+                <button id="botaoDica">
+                    💡 PEDIR DICA
+                </button>
+
+                <p id="dica"></p>
+            </div>
+
+            <div id="palavra"></div>
+
+            <p id="erros">
+                Erros: 0 / 6
+            </p>
+
+            <div id="letras"></div>
+
+            <button id="botaoReiniciar">
+                Reiniciar
+            </button>
+
+        </div>
+
+        <div class="resultado" id="resultado">
+
+            <div class="resultado-card">
+
+                <img
+                    src="../../assets/img/mario/estrela.png"
+                    alt="Estrela"
+                    class="icone-resultado">
+
+                <h2 id="resultadoTitulo">
+                    PARABÉNS!
+                </h2>
+
+                <p id="resultadoMensagem">
+                    Você acertou!
+                </p>
+
+                <div class="resultado-botoes">
+
+                    <button id="jogarNovamente">
+                        Jogar Novamente
+                    </button>
+
+                    <a href="./jogos.html" class="botao-lobby">
+                        Voltar ao Lobby
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="../../Js/forca.js"></script>
+
+</body>
+
+</html>

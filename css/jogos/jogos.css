@@ -3,12 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     min-height: 100vh;
-     background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .7)), url("../../assets/img/mario/fundo\ mari\ 1.jpg");
+    background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .7)), url("../../assets/img/mario/fundo\ mari\ 1.jpg");
     color: #fff;
     font-family: 'Rajdhani', sans-serif;
 }
+
 .cabecalho {
     width: 100%;
     height: 80px;
@@ -19,53 +21,56 @@ body {
     justify-content: space-between;
     padding: 0 50px;
 }
+
 .logo h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 18px;
     color: #F1F3F8;
     letter-spacing: 2px;
 }
+
 .usuario {
     display: flex;
     align-items: center;
     gap: 8px;
 }
+
 .icone-moeda {
     width: 32px;
     height: 32px;
     object-fit: contain;
 }
+
 .usuario span {
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
     color: #F1F3F8;
 }
+
 .inicio {
+    position: relative;
     min-height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15px;
+    padding-top: 70px;
 }
+
 .voltar {
-    align-self: flex-start;
-    margin-left: 50px;
-    padding: 8px 18px;
-    color: #fff;
-    text-decoration: none;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    border: 3px solid #f5a400;
-    border-radius: 10px;
-    box-shadow: 0 0 8px #f5a400;
-    transition: 0.2s ease;
+    position: absolute;
+    top: 25px;
+    left: 35px;
+    z-index: 10;
 }
-.voltar:hover {
-    background: #f5a400;
-    color: #fff;
-    transform: translateY(-2px);
+
+.voltar img {
+    width: 65px;
 }
+
+.voltar:hover img {
+    transform: scale(1.1);
+}
+
 .inicio h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 21px;
@@ -73,6 +78,7 @@ body {
     letter-spacing: 2px;
     margin-bottom: 50px;
 }
+
 .opcoes {
     display: flex;
     justify-content: center;
@@ -80,6 +86,7 @@ body {
     gap: 70px;
     width: 100%;
 }
+
 .card-velha,
 .card-forca,
 .card-memoria {
@@ -94,11 +101,13 @@ body {
     justify-content: center;
     transition: 0.2s ease;
 }
+
 .card-velha:hover,
 .card-forca:hover,
 .card-memoria:hover {
     transform: translateY(-5px);
 }
+
 .icone-velha,
 .icone-forca,
 .icone-memoria {
@@ -108,6 +117,7 @@ body {
     margin-bottom: 25px;
     filter: sepia(1) saturate(8) hue-rotate(355deg) brightness(1.1);
 }
+
 .card-velha h3,
 .card-forca h3,
 .card-memoria h3 {
@@ -117,6 +127,7 @@ body {
     color: #fff;
     margin-bottom: 25px;
 }
+
 .card-velha button,
 .card-forca button,
 .card-memoria button {
@@ -128,12 +139,14 @@ body {
     cursor: pointer;
     transition: 0.2s ease;
 }
+
 .card-velha button:hover,
 .card-forca button:hover,
 .card-memoria button:hover {
     background-color: #e88b00;
     transform: translateY(-2px);
 }
+
 .card-velha button a,
 .card-forca button a,
 .card-memoria button a {
@@ -144,6 +157,7 @@ body {
     justify-content: center;
     text-decoration: none;
 }
+
 .card-velha button h5,
 .card-forca button h5,
 .card-memoria button h5 {
@@ -152,4 +166,197 @@ body {
     font-size: 21px;
     font-weight: 700;
     color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+    .cabecalho {
+        padding: 0 30px;
+    }
+
+    .inicio {
+        padding: 80px 25px 40px;
+    }
+
+    .inicio h1 {
+        font-size: 19px;
+        text-align: center;
+        line-height: 1.8;
+        margin-bottom: 35px;
+    }
+
+    .voltar {
+        left: 20px;
+        top: 20px;
+    }
+
+    .voltar img {
+        width: 55px;
+    }
+
+    .opcoes {
+        gap: 25px;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+
+    .card-velha,
+    .card-forca,
+    .card-memoria {
+        width: 250px;
+        height: 260px;
+    }
+
+    .icone-velha,
+    .icone-forca,
+    .icone-memoria {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+/* CELULARES */
+@media screen and (max-width: 600px) {
+    .cabecalho {
+        height: 70px;
+        padding: 0 15px;
+        border-bottom-width: 4px;
+    }
+
+    .logo h1 {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .usuario {
+        gap: 5px;
+    }
+
+    .icone-moeda {
+        width: 24px;
+        height: 24px;
+    }
+
+    .usuario span {
+        font-size: 9px;
+    }
+
+    .inicio {
+        min-height: calc(100vh - 70px);
+        padding: 100px 15px 35px;
+    }
+
+    .voltar {
+        top: 20px;
+        left: 15px;
+    }
+
+    .voltar img {
+        width: 45px;
+    }
+
+    .inicio h1 {
+        font-size: 15px;
+        line-height: 1.8;
+        letter-spacing: 1px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .opcoes {
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        padding: 0;
+    }
+
+    .card-velha,
+    .card-forca,
+    .card-memoria {
+        width: 100%;
+        max-width: 300px;
+        height: 240px;
+        border-width: 3px;
+        border-radius: 15px;
+    }
+
+    .icone-velha,
+    .icone-forca,
+    .icone-memoria {
+        width: 105px;
+        height: 105px;
+        margin-bottom: 15px;
+    }
+
+    .card-velha h3,
+    .card-forca h3,
+    .card-memoria h3 {
+        font-size: 19px;
+        margin-bottom: 18px;
+    }
+
+    .card-velha button,
+    .card-forca button,
+    .card-memoria button {
+        width: 120px;
+        height: 42px;
+    }
+
+    .card-velha button h5,
+    .card-forca button h5,
+    .card-memoria button h5 {
+        font-size: 19px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+@media screen and (max-width: 360px) {
+    .cabecalho {
+        padding: 0 10px;
+    }
+
+    .logo h1 {
+        font-size: 10px;
+    }
+
+    .usuario span {
+        font-size: 8px;
+    }
+
+    .icone-moeda {
+        width: 20px;
+        height: 20px;
+    }
+
+    .inicio {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .inicio h1 {
+        font-size: 12px;
+    }
+
+    .voltar img {
+        width: 40px;
+    }
+
+    .card-velha,
+    .card-forca,
+    .card-memoria {
+        max-width: 270px;
+        height: 220px;
+    }
+
+    .icone-velha,
+    .icone-forca,
+    .icone-memoria {
+        width: 90px;
+        height: 90px;
+    }
+
+    .card-velha h3,
+    .card-forca h3,
+    .card-memoria h3 {
+        font-size: 17px;
+    }
 }
